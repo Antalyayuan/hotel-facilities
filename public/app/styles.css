@@ -200,3 +200,41 @@ h1{margin:0;font-size:40px}
 }
 @media (max-width:720px){ .amenity-box{grid-template-columns: repeat(2,1fr);} }
 .chk{display:flex; gap:8px; align-items:center; font-size:13px; color:#374151}
+
+
+/* ---------- Responsive fix for Filters (mobile) ---------- */
+.filters{
+  flex-wrap: wrap;       /* 关键：允许换行 */
+}
+
+.filters .field{
+  min-width: 0;          /* 关键：允许 input/select 缩小 */
+  flex: 1 1 220px;       /* 桌面/平板仍能并排；不够宽就换行 */
+}
+
+.filters .field input,
+.filters .field select{
+  width: 100%;
+}
+
+/* 小屏：让 Status/Search/Sort 变成一列堆叠；状态提示占满一行 */
+@media (max-width: 720px){
+  .filters{
+    gap: 12px;
+  }
+
+  .filters .field{
+    flex: 1 1 100%;
+  }
+
+  .grow{
+    display: none;       /* 小屏不需要用 grow 推开 */
+  }
+
+  .statusline,
+  #listError{
+    flex: 1 1 100%;
+    padding-bottom: 0;
+    white-space: normal;
+  }
+}

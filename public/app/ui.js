@@ -54,7 +54,6 @@ function roomTypeCardHtml(rt) {
     <div class="actions">
       <div style="display:flex;gap:8px">
         <button class="btn btn-ghost" data-action="edit" data-id="${rt.id}">Edit</button>
-        <button class="btn btn-ghost btn-danger" data-action="delete" data-id="${rt.id}">Delete</button>
       </div>
       <button class="btn btn-primary" data-action="rooms" data-id="${rt.id}">Manage Rooms</button>
     </div>
